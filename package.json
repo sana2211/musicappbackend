@@ -1,0 +1,23 @@
+{
+  "name": "musicappbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sana2211/musicappbackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sana2211/musicappbackend/issues"
+  },
+  "homepage": "https://github.com/sana2211/musicappbackend#readme",
+  "dependencies": {
+    "knex": "^0.21.18",
+    "pg": "^8.5.1"
+  }
+}
