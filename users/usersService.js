@@ -20,11 +20,11 @@
             .where('id',id)
             .first()
     },
-    getUserByUsername(knex, username){
+    getUserByUsername(knex, email){
         return knex 
-            .select('id','username','password')
+            .select('id','email','password')
             .from('users')
-            .where('username',username)
+            .where('email', email)
             .first()
     },
 }

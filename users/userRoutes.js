@@ -16,12 +16,14 @@ usersRouter
     .catch(next)
     })
     .post((req, res, next)=>{
+      console.log(req.body)
        const { fullname, email, password } = req.body
             const newUser ={
                 fullname,
                 email,
                 password
             };
+            console.log(newUser)
             UsersService.insertNewUser(
               req.app.get('db'),
               newUser
@@ -89,16 +91,13 @@ usersRouter
 
     .post((req, res, next)=>{
       const { password } = req.body
-      bcrypt.compare(password, res.user.password, function(error, response) {
-        if(!response){
-          res.status(401).json({success: false});
-        } 
-        else
-        {
-          res.status(200).json({"token": token});
-        }
-       
-      }); 
+      if(password === res.user.password)
+      {
+        res.status(200).json({"token": 'token'});
+      }
+      else{
+        res.status(401).json({success: false});
+      }
       
     })
    
