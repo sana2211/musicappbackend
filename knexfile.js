@@ -1,22 +1,30 @@
-// Update with your config settings.
+require('dotenv').config();
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
+const HOST = 'ec2-52-44-139-108.compute-1.amazonaws.com'
+const DB = 'de8fhncugherm3';
+const USER = 'mlyuurfwtyedfh';
+const PASSWORD = '92ff09043eabd0824d9d8bb99946669f1cc83ad094704972dc51765c2700a9a3';
 
 module.exports = {
 
   development: {
     client: 'postgresql',
     connection: {
-      database: 'postgres',
-      user:     'postgres',
-      password: 'passw0rd'
-    },
+      host: HOST,
+      database: DB,
+      user:     USER,
+      password: PASSWORD,
+      ssl: true
+    }
   },
 
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'postgres',
-      user:     'postgress',
-      password: 'password'
+      database: DB,
+      user:     USER,
+      password: PASSWORD
     },
     pool: {
       min: 2,
@@ -30,9 +38,9 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'postress',
-      user:     'postgres',
-      password: 'password'
+      database: DB,
+      user:     USER,
+      password: PASSWORD
     },
     pool: {
       min: 2,

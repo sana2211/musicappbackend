@@ -93,7 +93,7 @@ usersRouter
       const { password } = req.body
       if(password === res.user.password)
       {
-        res.status(200).json({"token": 'token'});
+        res.status(200).json({"email": res.user.email});
       }
       else{
         res.status(401).json({success: false});
