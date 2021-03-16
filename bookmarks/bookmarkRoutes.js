@@ -26,11 +26,12 @@ bookmarkRouter
     })
     .post((req, res, next)=>{
         console.log(req.body)
-         const { title, artist, url } = req.body
+         const { title, artist, url, user_id } = req.body
               const newBookmark ={
                   title,
                   artist,
-                  url
+                  url,
+                  user_id
               };
               console.log(newBookmark)
               BookmarkService.insertNewBookmark(
