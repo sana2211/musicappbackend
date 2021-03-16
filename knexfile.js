@@ -5,17 +5,17 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'musicdb',
+      database: 'postgres',
       user:     'postgres',
-      password: 'chocolate84'
+      password: 'passw0rd'
     },
   },
 
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
+      database: 'postgres',
+      user:     'postgress',
       password: 'password'
     },
     pool: {
@@ -30,9 +30,9 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'musicdb',
+      database: 'postress',
       user:     'postgres',
-      password: 'chocolate84'
+      password: 'password'
     },
     pool: {
       min: 2,
