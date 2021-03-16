@@ -24,6 +24,28 @@ bookmarkRouter
     .get((req, res, next)=>{
         res.json(res.user)
     })
+    .post((req, res, next)=>{
+        console.log(req.body)
+         const { title, artist, url } = req.body
+              const newBookmark ={
+                  title,
+                  artist,
+                  url
+              };
+              console.log(newBookmark)
+              BookmarkService.insertNewBookmark(
+                req.app.get('db'),
+                newBookmark
+               )
+              .then(user=>{
+                res
+                  .status(201)
+                  .json(user)
+               })
+               .catch(next);
+   
+      })
+  
     .delete((req, res, next)=>{
         UsersService.deleteUser(
             req.app.get('db'),
