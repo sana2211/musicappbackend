@@ -22,7 +22,7 @@ bookmarkRouter
         .catch(next)       
     })
     .get((req, res, next)=>{
-        res.json(res)
+        res.json(res.user)
     })
     .delete((req, res, next)=>{
         UsersService.deleteUser(
@@ -37,4 +37,4 @@ bookmarkRouter
 
 
 
-module.exports = usersRouter 
+module.exports = bookmarkRouter 
