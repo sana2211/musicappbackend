@@ -48,7 +48,7 @@ bookmarkRouter
       })
   
     .delete((req, res, next)=>{
-        UsersService.deleteUser(
+      BookmarkService.deleteBookmark(
             req.app.get('db'),
             req.params.user_id
         )

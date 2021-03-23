@@ -16,6 +16,13 @@
             .from('bookmarks')
             .where('user_id', id)
     },
+
+    deleteBookmark(knex, id){
+        return knex 
+            .delete('*')  
+            .from('bookmarks')
+            .where('id', id)
+    },
 }
 
 module.exports = BookmarkService;
