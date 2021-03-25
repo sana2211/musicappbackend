@@ -56,7 +56,7 @@ usersRouter
         .catch(next)       
     })
     .get((req, res, next)=>{
-        res.json(res)
+        res.status(200).json(res.user)
     })
     .delete((req, res, next)=>{
         UsersService.deleteUser(

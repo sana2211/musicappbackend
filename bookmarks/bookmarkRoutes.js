@@ -58,6 +58,4 @@ bookmarkRouter
         .catch(next)
     })
 
-
-
 module.exports = bookmarkRouter 

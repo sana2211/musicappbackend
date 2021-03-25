@@ -22,7 +22,7 @@
             .delete('*')  
             .from('bookmarks')
             .where('id', id)
-    },
+    }
 }
 
 module.exports = BookmarkService;
