@@ -10,15 +10,16 @@
 Request:
 
 Query Parameters:
-userId: number
+
+`userId: number`
 
 Response body:
 
-{
+`{
     "id": number,
     "fullname": string,
     "email": string,
     "password": string,
     "created_at": date,
     "updated_at": date
-}
+}`
