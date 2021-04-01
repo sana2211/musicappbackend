@@ -17,8 +17,8 @@ app.use(cors());
 app.set('db', db);
 app.use('/api/users', userRouter);
 app.use('/api/bookmarks', bookmarkRouter);
-app.get('/', (req, res)=>{
+/*app.get('/', (req, res)=>{
     res.status(200).send("Hello, World!")
-})
+})*/
 
 module.exports = app
