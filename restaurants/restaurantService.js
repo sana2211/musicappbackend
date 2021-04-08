@@ -1,29 +1,29 @@
-  const BookmarkService = {
+  const restaurantService = {
    
-    insertNewBookmark(knex, newUser){
+    insertNewrestaurant(knex, newUser){
         return knex
             .insert(newUser)
-            .into('bookmarks')
+            .into('restaurants')
             .returning('*')
             .then(rows=>{
                 return rows[0]
             })
     },
     
-    getBookmarks(knex, id){
+    getrestaurants(knex, id){
         return knex 
             .select('*')  
-            .from('bookmarks')
+            .from('restaurants')
             .where('user_id', id)
     },
 
-    deleteBookmark(knex, id){
+    deleterestaurant(knex, id){
         return knex 
             .delete('*')  
-            .from('bookmarks')
+            .from('restaurants')
             .where('id', id)
     }
 }
 
-module.exports = BookmarkService;
+module.exports = restaurantService;
 

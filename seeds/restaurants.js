@@ -3,7 +3,7 @@ exports.seed = function(knex) {
     return knex('restaurants').del()
       .then(function () {
         // Inserts seed entries
-        return knex('users').insert([
+        return knex('restaurants').insert([
           {userId: 1, title: 'Breakfast',description: 'We serve breakfast all day', 
           calories: '100kl'},
           {userId: 1, title: 'Dinner',description: 'We serve vegan also ', 
