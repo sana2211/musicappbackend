@@ -6,7 +6,7 @@
 ## Documentation of API.
 
 ### https://musicappbackend101.herokuapp.com/api/users/:userId
-
+##
 Request:
 
 Query Parameters:
