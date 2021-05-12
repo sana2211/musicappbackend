@@ -9,11 +9,16 @@
     "start": "node server.js"
   },
   "repository": {
-    "type": "git"
-   },
+    "type": "git",
+    "url": "git+https://github.com/sana2211/musicappbackend.git"
+  },
   "author": "",
   "license": "ISC",
-    "dependencies": {
+  "bugs": {
+    "url": "https://github.com/sana2211/musicappbackend/issues"
+  },
+  "homepage": "https://github.com/sana2211/musicappbackend#readme",
+  "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

@@ -3,9 +3,7 @@ exports.up = function(knex) {
     return knex.schema.createTable('users', (table)=>
     {
     table.increments();
-    table.string('restaurantName').notNullable();
-    table.string('jobTitle').notNullable();
-    table.string('address').notNullable();
+    table.string('fullname').notNullable();
     table.string('email').notNullable();
     table.string('password').notNullable();
     table.timestamp('created_at').defaultTo(knex.fn.now())

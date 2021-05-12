@@ -4,7 +4,7 @@ const express  = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const userRouter = require('./users/userRoutes');
-const restaurantRouter = require('./restaurants/restaurantRoutes');
+const bookmarkRouter = require('./bookmarks/bookmarkRoutes');
 const cors = require('cors')
 const knex = require('knex')
 const db =knex({
@@ -16,7 +16,7 @@ app.use(bodyParser());
 app.use(cors());
 app.set('db', db);
 app.use('/api/users', userRouter);
-app.use('/api/restaurants', restaurantRouter);
+app.use('/api/bookmarks', bookmarkRouter);
 /*app.get('/', (req, res)=>{
     res.status(200).send("Hello, World!")
 })*/

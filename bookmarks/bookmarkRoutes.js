@@ -1,19 +1,19 @@
 const express = require('express')
-const restaurantService = require('./restaurantService')
+const BookmarkService = require('./bookmarkService')
 
-const restaurantRouter = express.Router()
+const bookmarkRouter = express.Router()
 
-restaurantRouter
+bookmarkRouter
     .route(`/:user_id`)
     .all((req, res, next)=>{
-      restaurantService.getrestaurants(
+      BookmarkService.getBookmarks(
           req.app.get('db'),
           req.params.user_id
         )
         .then(user=>{
           if(!user){
              return res.status(404).json({
-             error: {message: `No restaurants` }
+             error: {message: `No bookmarks` }
               })
             }
             res.user = user
@@ -27,16 +27,16 @@ restaurantRouter
     .post((req, res, next)=>{
         console.log(req.body)
          const { title, artist, url, user_id } = req.body
-              const newrestaurant ={
+              const newBookmark ={
                   title,
                   artist,
                   url,
                   user_id
               };
-              console.log(newrestaurant)
-              restaurantService.insertNewrestaurant(
+              console.log(newBookmark)
+              BookmarkService.insertNewBookmark(
                 req.app.get('db'),
-                newrestaurant
+                newBookmark
                )
               .then(user=>{
                 res
@@ -48,7 +48,7 @@ restaurantRouter
       })
   
     .delete((req, res, next)=>{
-      restaurantService.deleterestaurant(
+      BookmarkService.deleteBookmark(
             req.app.get('db'),
             req.params.user_id
         )
@@ -58,4 +58,4 @@ restaurantRouter
         .catch(next)
     })
 
-module.exports = restaurantRouter 
+module.exports = bookmarkRouter 
